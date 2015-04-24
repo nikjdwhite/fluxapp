@@ -21,12 +21,26 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/superslides/dist/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/hammer/hammer.js" type="text/javascript" charset="utf-8"></script>
   <script>
+    
     $(function() {
-      $('#slides').superslides({
+      var $slides = $('#slides');
+
+      Hammer($slides[0]).on("swipeleft", function(e) {
+        $slides.data('superslides').animate('next');
+      });
+
+      Hammer($slides[0]).on("swiperight", function(e) {
+        $slides.data('superslides').animate('prev');
+      });
+
+      $slides.superslides({
         hashchange: true
       });
     });
+
+  
   </script>
 </body>
 </html>
