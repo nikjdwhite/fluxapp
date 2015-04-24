@@ -3,9 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Fluxus Cards</title>
+
   <link rel="stylesheet" href="js/superslides/dist/stylesheets/superslides.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+   <script>
+    
+    
+
+  
+  </script>
 </head>
 <body>
   <div id="slides">
@@ -19,32 +26,13 @@
     </nav>
   </div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/loadcards.js" type="text/javascript" charset="utf-8"></script>
 
   <script src="js/superslides/dist/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/hammer/hammer.js" type="text/javascript" charset="utf-8"></script>
   
-  <script>
-    
-    $(function() {
-      var $slides = $('#slides');
-
-      Hammer($slides[0]).on("swipeleft", function(e) {
-        $slides.data('superslides').animate('next');
-      });
-
-      Hammer($slides[0]).on("swiperight", function(e) {
-        $slides.data('superslides').animate('prev');
-      });
-
-      $slides.superslides({
-        hashchange: true
-      });
-    });
-
-  
-  </script>
+ 
 </body>
 </html>
