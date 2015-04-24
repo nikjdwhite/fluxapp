@@ -1,0 +1,13 @@
+
+#slides {
+	height:650px;
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	z-index:0;
+}
+
+.slides-container img {
+	width:800px;
+}
+		
