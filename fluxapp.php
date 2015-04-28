@@ -66,7 +66,7 @@
 			<img src="images/template.jpg"/>
 			<div class="container">
 				<form id="addCard" action="fluxapp.php" method="post">
-					<textarea class="input-lg" id="cardtext" name="cardtext" cols="80" placeholder="Create a Fluxus Event."></textarea>
+					<textarea class="input-lg" id="cardtext" name="cardtext" cols="40" placeholder="Create a Fluxus Event."></textarea>
 					<br/>
 					<br/>
 					<input class="input-lg" type="text" id="signature" name="signature" size="50" placeholder="Take credit."/>
