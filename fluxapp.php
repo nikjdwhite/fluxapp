@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php
+
+	if (isset($_POST["cardtext"])) {
+	var_dump($_POST);
+		$cards = simplexml_load_file("cards.xml");
+		$card = $cards->addChild("card");
+		$card->addChild("cardtext", $_POST["cardtext"]);
+		$card->addChild("signature", $_POST["signature"]);
+		$cards->asXML("cards.xml");
+	}
+
+?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -36,10 +49,10 @@
 		<li>
 			<img src="images/default.png"/>
 			<div class="container">
-				<form id="addCard">
-					<textarea id="cardtext" placeholder="Create a Fluxus Event."></textarea>
-					<input type="text" id="signature" placeholder="Take credit."/>
-					<input id="savecard" class="btn btn-default btn-lg" type="button" value="Add your event."/>
+				<form id="addCard" action="fluxapp.php" method="post">
+					<textarea id="cardtext" name="cardtext" placeholder="Create a Fluxus Event."></textarea>
+					<input type="text" id="signature" name="signature" placeholder="Take credit."/>
+					<button id="savecard" class="btn btn-default btn-lg" type="submit" value="Add your event."/>
 				</form>
 			</div>
 		</li>
