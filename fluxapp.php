@@ -14,6 +14,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Fluxus Cards</title>
 
   <link rel="stylesheet" href="js/superslides/dist/stylesheets/superslides.css">
@@ -25,23 +26,23 @@
   <div id="slides">
     <ul class="slides-container" id="slides-list">
 		<li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1134.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1134.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1156.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1156.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1160.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1160.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1162.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1162.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1164.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1164.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1167.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1167.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1168.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1168.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1169.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1169.jpg" />
 		</li><li>
-			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1155.jpg"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1155.jpg" />
 		</li>
 
 		
@@ -50,7 +51,7 @@
 			$xml = simplexml_load_file("cards.xml");
 			foreach ($xml->card as $slide){
 				print '<li>';
-				print '<img src="images/template.jpg"/>';
+				print '<img src="images/template.jpg" />';
 				print '<div class="container">';
 				print '<p class="cardtext">'.$slide->cardtext.'</p>';
 				print '<p class="signature">'.$slide->signature.'</p>';
@@ -63,17 +64,28 @@
 			<img src="images/template.jpg"/>
 			<div class="container">
 				<form id="addCard" action="fluxapp.php" method="post">
-					<textarea id="cardtext" name="cardtext" placeholder="Create a Fluxus Event."></textarea>
-					<input type="text" id="signature" name="signature" placeholder="Take credit."/>
-					<button id="savecard" class="btn btn-default btn-lg" type="submit" value="Add your event."/>
+					<textarea class="input-lg" id="cardtext" name="cardtext" cols="80" placeholder="Create a Fluxus Event."></textarea>
+					<br/>
+					<br/>
+					<input class="input-lg" type="text" id="signature" name="signature" size="50" placeholder="Take credit."/>
+					<br/>
+					<input id="savecard" class="btn btn-lg" type="submit" value="Add your event."/>
 				</form>
 			</div>
 		</li>
     </ul>
 
     <nav class="slides-navigation">
-      <a href="#" class="next">Next</a>
-      <a href="#" class="prev">Previous</a>
+      <a href="#" class="next">
+		<button type="button" class="btn btn-default btn-lg">
+			<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+		</button>
+	  </a>
+      <a href="#" class="prev">
+	    <button type="button" class="btn btn-default btn-lg">
+			<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+		</button>
+	  </a>
     </nav>
   </div>
 
