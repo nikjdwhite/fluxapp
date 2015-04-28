@@ -3,7 +3,6 @@
 <?php
 
 	if (isset($_POST["cardtext"])) {
-	var_dump($_POST);
 		$cards = simplexml_load_file("cards.xml");
 		$card = $cards->addChild("card");
 		$card->addChild("cardtext", $_POST["cardtext"]);
@@ -26,18 +25,32 @@
   <div id="slides">
     <ul class="slides-container" id="slides-list">
 		<li>
-			<img src="images/first.png"/>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1134.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1156.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1160.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1162.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1164.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1167.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1168.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1169.jpg"/>
+		</li><li>
+			<img src="http://thestudio.uiowa.edu/fluxus/sites/default/files/fluxus1155.jpg"/>
 		</li>
-		<li>
-			<img src="images/second.png"/>
-		</li>
+
 		
 		<?php 
 
 			$xml = simplexml_load_file("cards.xml");
 			foreach ($xml->card as $slide){
 				print '<li>';
-				print '<img src="images/default.png"/>';
+				print '<img src="images/template.jpg"/>';
 				print '<div class="container">';
 				print '<p class="cardtext">'.$slide->cardtext.'</p>';
 				print '<p class="signature">'.$slide->signature.'</p>';
@@ -47,7 +60,7 @@
 
 		?>
 		<li>
-			<img src="images/default.png"/>
+			<img src="images/template.jpg"/>
 			<div class="container">
 				<form id="addCard" action="fluxapp.php" method="post">
 					<textarea id="cardtext" name="cardtext" placeholder="Create a Fluxus Event."></textarea>
