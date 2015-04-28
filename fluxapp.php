@@ -15,6 +15,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
   <title>Fluxus Cards</title>
 
   <link rel="stylesheet" href="js/superslides/dist/stylesheets/superslides.css">
