@@ -7,12 +7,7 @@
   <link rel="stylesheet" href="js/superslides/dist/stylesheets/superslides.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-   <script>
-    
-    
-
-  
-  </script>
+ 
 </head>
 <body>
   <div id="slides">
@@ -23,21 +18,28 @@
 		<li>
 			<img src="images/second.png"/>
 		</li>
-		<li>
-			<img src="images/default.png"/>
-			<div class="container">
-				<p>
-					This is another test!
-				</p>
-			</div>
-		</li>
+		
+		<?php 
+
+			$xml = simplexml_load_file("cards.xml");
+			foreach ($xml->card as $slide){
+				print '<li>';
+				print '<img src="images/default.png"/>';
+				print '<div class="container">';
+				print '<p class="cardtext">'.$slide->cardtext.'</p>';
+				print '<p class="signature">'.$slide->signature.'</p>';
+				print '</div>';
+				print '</li>';
+			}
+
+		?>
 		<li>
 			<img src="images/default.png"/>
 			<div class="container">
 				<form id="addCard">
 					<textarea id="cardtext" placeholder="Create a Fluxus Event."></textarea>
 					<input type="text" id="signature" placeholder="Take credit."/>
-					<input class="btn btn-default btn-lg" type="button" value="Add your event."/>
+					<input id="savecard" class="btn btn-default btn-lg" type="button" value="Add your event."/>
 				</form>
 			</div>
 		</li>
